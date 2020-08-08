@@ -2,20 +2,19 @@ from Main.MLE import PyMastic
 import numpy as np
 
 
-
-
-np.set_printoptions(precision=2, suppress=True)
-q = 100.0
-a = 5.99
+q = 100.0                   # lb.
+a = 5.99                    # inch
 x = [0, 8]                  # number of columns in response
 z = [0, 9.99, 10.01]        # number of rows in response
 H = [10, 6]                 # inch
 E = [500, 40, 10]           # ksi
 nu = [0.35, 0.4, 0.45]
-ZRO = 7*1e-7
+ZRO = 7*1e-7                # to avoid numerical instability
+isBD= [0, 0]
+it = 10
 
+RS = PyMastic(q,a,x,z,H,E,nu, ZRO, isBounded = isBD, iteration = it, inverser = 'solve')
 
-RS = PyMastic(q,a,x,z,H,E,nu, ZRO, isBounded = [0, 0], iteration = 10, inverser = 'solve')
 
 print("\nDisplacement [0, 0]: ")
 print(RS['Displacement_Z'][0, 0])
