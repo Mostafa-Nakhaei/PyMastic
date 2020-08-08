@@ -1,2 +1,7 @@
 # PyMastic
-This is a simple function that measures the elastic response of a pavement system under circular load.
+This program provides elastic response of a pavement system under uniform circular load.
+PyMastic has the ability to change the matrix inversion method to obtain more numerically stable solution. 
+The number of iteration for Henkel Intergral to converge is flexible and can be tuned by user. 
+
+# Validation examples
+The PyMastic is compared against several well-esbailished multi-layer elastic programs such as WESLEA and Kenpave.
