@@ -13,7 +13,6 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
 
 ## Requirements
 - pip install requriments.
-  (if numpy and Scipy already installed, no need for installation)
 
 ## Sign convention:
 - Positive Strain: Tensile Strain
