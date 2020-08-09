@@ -5,7 +5,11 @@ The number of iteration for Henkel Intergral to converge is flexible and can be 
 
 ## Validation examples
 The PyMastic is compared against several well-esbailished multi-layer elastic programs such as WESLEA and Kenpave.
-![Figure_1](./Images/Figure_1.png)
+
+<p>
+    <img src="./Images/Figure_1.png" align="center" height="860" width="674" >
+    <em>image_caption</em>
+</p>
 
 ## Installation
 - Clone the repository
