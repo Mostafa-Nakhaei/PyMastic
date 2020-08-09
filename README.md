@@ -42,5 +42,5 @@ The number of iteration for Henkel Intergral to converge is flexible and can be 
 - pip install requriments.
 
 ## Sign convention:
-- Positive Strain: Compressive Strain
+- Positive Strain: Compressive
 - Positive Stress: Compressive
