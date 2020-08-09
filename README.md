@@ -30,7 +30,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
     Figure 3. Deflection of the multi layered elastic pavement under circular uniform load (Kenpave VS MASTIC)
 </p>
 
-## some extra abilities
+## Some extra abilities
 PyMastic has the ability to change the matrix inversion method in solving boundry condition to obtain more numerically stable solution. 
 The number of iteration for Henkel Intergral to converge is flexible and can be tuned by user. 
 
