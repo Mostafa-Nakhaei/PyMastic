@@ -73,6 +73,7 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
     CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
     '''
     x = np.array(x, dtype=np.float64)
     x[x == 0] = 1e-6
@@ -118,6 +119,18 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
     mFinal =  mValuesMatrix[0:-1,:] + coefficient
     mNotSorted = mFinal.flatten(order="F")
     m = np.sort(mNotSorted)
+    # m = np.array([1e-10, 0.05, 0.10, 0.20, 0.40, 0.60, 0.80, 1.00, 1.20, 1.40, 1.60,
+    #               1.80, 2.00, 2.20, 2.40, 2.60, 2.80, 3.00, 3.20, 3.40, 3.60, 3.80,
+    #               4.00, 4.20, 4.40, 4.60, 4.80, 5.00, 5.50, 6.00, 6.50, 7.00, 7.50,
+    #               8.00, 8.50, 9.00, 9.50, 10.00, 11.00, 12.00, 13.00, 14.00, 15.00,
+    #               16.00, 17.00, 18.00, 19.00, 20.00, 25.00, 30.00, 35.00, 40.00,
+    #               45.00, 50.00, 55.00, 60.00, 65.00, 70.00, 75.00, 80.00, 85.00,
+    #               90.00, 95.00, 100.00, 110.00, 120.00, 130.00, 140.00, 150.00,
+    #               160.00, 170.00, 180.00, 190.00, 200.00, 210.00, 220.00, 230.00,
+    #               240.00, 250.00, 260.00, 270.00, 280.00, 290.00, 300.00, 350.00,
+    #               400.00, 450.00, 500.00, 600.00, 700.00, 800.00, 900.00, 1000.00,
+    #               2000.00, 10000.00, 100000.00])
+
     for i in range(len(ind)):
         ind[i] = np.where(Lamda > L[i])[0][0]
 
@@ -141,7 +154,8 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
     Lamda_BC = np.cumsum(H_BC)/sumH        
     R = E[0:-1] / E[1:] *((1+nu[1:]) / (1 + nu[0:-1]))
     
-    for j in range(len(m)):        
+    for j in range(len(m)):
+        
         LeftMatrix1 = np.array([[np.exp(-m[j] * Lamda_BC[0]), 1], [np.exp(-m[j] * Lamda_BC[0]), -1]])
         RightMatrix1 = np.array([[-(1 - 2 * nu[0]) * np.exp(-m[j] * Lamda_BC[0]), 1 - 2 * nu[0]], [2 * nu[0] * np.exp(-m[j] * Lamda_BC[0]), 2 * nu[0]]])
         dLambda = np.diff(np.hstack((0, Lamda_BC)))
@@ -162,6 +176,7 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
                 elif inverser == 'svd':
                     U,s,V = np.linalg.svd(LeftMatrix[i])
                     InvLeftMatrix[i,:,:] = np.transpose(V) @ np.diag(1/s) @ np.transpose(U)
+                    
                 RightMatrix[i,:,:] = np.array([[F[i+1], 1, -(1 - 2 * nu[i+1] - m[j] * Lamda_BC[i]) * F[i+1], 1 - 2 * nu[i+1] + m[j] * Lamda_BC[i]],
                                         [F[i+1], -1, (2 * nu[i+1] + m[j] * Lamda_BC[i]) * F[i+1], 2 * nu[i+1] - m[j] * Lamda_BC[i]],
                                         [R[i] * F[i+1], R[i], (1 + m[j] * Lamda_BC[i]) * R[i] * F[i+1], -(1 - m[j] * Lamda_BC[i]) * R[i]],
@@ -198,10 +213,8 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
                                         [ZRO, ZRO, ZRO, ZRO],
                                         [F[i+1], -1, (2 * nu[i+1] + m[j] * Lamda_BC[i]) * F[i+1], 2 * nu[i+1] - m[j] * Lamda_BC[i]]])
                
-                if  inverser == 'pinv' or  inverser == 'inv':
+                if  inverser == 'pinv' or  inverser == 'inv' or inverser == 'svd':
                     solved_matrix[i,:,:] = np.dot(InvLeftMatrix[i,:,:], RightMatrix[i,:,:])
-                elif inverser == 'svd':
-                    solved_matrix[i,:,:] = InvLeftMatrix[i,:,:] @ RightMatrix[i,:,:]
                 elif inverser == 'lu':
                     solved_matrix[i,:,:] = linalg.lu_solve(LU, RightMatrix[i,:,:])              
                     
@@ -333,4 +346,3 @@ def PyMastic(q,a,x,z,H,E,nu, ZRO=1e-3, isBounded = [1,1], iteration = 25, invers
                "Strain_T": epsT
                }
     return Response
-    
