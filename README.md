@@ -4,7 +4,7 @@ PyMastic provides elastic response of a pavement system under uniform circular l
 
 
 ## Validation examples
-The PyMastic is compared against several well-esbailished multi-layer elastic programs such as WESLEA and Kenpave.
+The PyMastic is compared against several well-esbailished multi-layer elastic programs such as WESLEA and Kenpave. The following images compare the results of Mastic with Kenpave program.
 
 <p>
     <img src="./Images/Figure_2.png" alt align="center" height="860" width="674" >
