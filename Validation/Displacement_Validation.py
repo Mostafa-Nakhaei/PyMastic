@@ -48,9 +48,6 @@ ax1.plot(x_dot, y_dor, 'k--', alpha=0.3)
 x_dot = [-50, 50]
 y_dor = [H[0]+H[1], H[0]+H[1]]
 ax1.plot(x_dot, y_dor, 'k--', alpha=0.3)
-y_dot = [30, 0]
-x_dot = [0, 0]
-ax1.plot(x_dot, y_dot, 'k--', alpha=0.9)
 textstr = "AC layer"
 props = dict(boxstyle='round', edgecolor='none', facecolor='none')
 ax1.text(5, 3,
@@ -98,9 +95,6 @@ ax2.plot(x_dot, y_dor, 'k--', alpha=0.3)
 x_dot = [-50, 50]
 y_dor = [H[0]+H[1], H[0]+H[1]]
 ax2.plot(x_dot, y_dor, 'k--', alpha=0.3)
-y_dot = [30, 0]
-x_dot = [0, 0]
-ax2.plot(x_dot, y_dot, 'k--', alpha=0.9)
 textstr = "AC layer"
 props = dict(boxstyle='round', edgecolor='none', facecolor='none')
 ax2.text(5, 3,
