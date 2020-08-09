@@ -16,7 +16,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
 
 
 <p>
-    <img src="./Images/Figure_2.png" alt align="center" height="860" width="674" >
+    <img src="./Images/Figure_3.png" alt align="center" height="860" width="674" >
 </p>
 <p>
     Figure 2. Vertical Stress Response under circular uniform load
