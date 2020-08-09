@@ -10,7 +10,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
     <img src="./Images/Figure_2.png" alt align="center" height="860" width="674" >
 </p>
 <p>
-    Figure 1. Horizontal Strain Response under circular uniform load
+    Figure 1. Horizontal Strain Response under circular uniform load (Kenpave VS MASTIC)
 </p>
 
 
@@ -19,7 +19,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
     <img src="./Images/Figure_3.png" alt align="center" height="860" width="674" >
 </p>
 <p>
-    Figure 2. Vertical Stress Response under circular uniform load
+    Figure 2. Vertical Stress Response under circular uniform load (Kenpave VS MASTIC)
 </p>
 
 
@@ -27,7 +27,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
     <img src="./Images/Figure_1.png" alt align="center" height="860" width="674" >
 </p>
 <p>
-    Figure 3. Deflection of the multi layered elastic pavement under circular uniform load
+    Figure 3. Deflection of the multi layered elastic pavement under circular uniform load (Kenpave VS MASTIC)
 </p>
 
 
