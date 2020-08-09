@@ -1,5 +1,5 @@
 # PyMastic
-This program provides elastic response of a pavement system under uniform circular load.
+PyMastic provides elastic response of a pavement system under uniform circular load.
 PyMastic has the ability to change the matrix inversion method to obtain more numerically stable solution. 
 The number of iteration for Henkel Intergral to converge is flexible and can be tuned by user. 
 
@@ -13,7 +13,6 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
 
 ## Requirements
 - pip install requriments.
-  (if numpy and Scipy already installed, no need for installation)
 
 ## Sign convention:
 - Positive Strain: Tensile Strain
