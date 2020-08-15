@@ -102,6 +102,9 @@ except:
     ax1.plot(line_X, line_Y, 'r--')
     ax1.set_xlim([-35, 35])
     ax1.grid(False)
-    plt.gca().invert_yaxis()
+    ax1.set_xlabel('Distance from the surface (in.)')
+    ax1.set_ylabel('Distance from the surface (in.)')
+    ax1.xaxis.set_label_position('top') 
+    plt.gca().invert_yaxis()    
     plt.show()
 
