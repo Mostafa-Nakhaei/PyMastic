@@ -30,7 +30,9 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
     Figure 3. Deflection of the multi layered elastic pavement under circular uniform load (Kenpave VS MASTIC)
 </p>
 
-The following figure shows how pavement deforms under traffic load (the following pavement structure has 4 layers as depicted by red dotted lines):
+
+## Pavement Deformation
+The following figure shows how pavement deforms under a traffic load. The following pavement structure has 4 layers as depicted by red dotted lines:
 
 <p>
     <img src="./Images/Figure_4.png" alt align="center" height="600" width="800" >
