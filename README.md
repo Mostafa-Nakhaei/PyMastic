@@ -32,7 +32,7 @@ The PyMastic is compared against several well-esbailished multi-layer elastic pr
 
 
 ## Pavement Deformation
-The following figure shows how pavement deforms under a traffic load. The following pavement structure has 4 layers as depicted by red dotted lines:
+The following figure shows how pavement deforms under a traffic load. The following pavement structure has 4 layers as depicted by red lines:
 
 <p>
     <img src="./Images/Figure_4.png" alt align="center"  >
