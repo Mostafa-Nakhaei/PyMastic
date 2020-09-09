@@ -1,6 +1,6 @@
 # PyMastic
 PyMastic provides elastic response of a pavement system under uniform circular load.This open source program can be used in veriaty of tasks such pavement backcalculation, pavement design, overlay design, etc. PyMastic is written in Python programming language. The multiplatform softwere package is under construction
-
+This program was originally written in Matlab but later transfered into Python.
 
 
 ## Validation examples
